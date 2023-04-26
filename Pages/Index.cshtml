@@ -4,13 +4,31 @@
     ViewData["Title"] = "Home page";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <h1>This is a book store app</h1>
 <div class="text-center">
-    <h1 class="display-4">Welcome to my bookstore12</h1>
-    <h3>A few book - 2</h3>
+    <h1 class="display-4">Welcome to my Book Store</h1>
     
 
-    <table>
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Publishers)
+        {
+            <tr>
+                <td>@item.PublisherId</td>
+                <td>@item.PublisherName</td>
+            </tr>
+        }
+    </table>
+
+
+    @*<table>
         <tr>
             <th></th>
             <th></th>
@@ -24,5 +42,5 @@
                 <td>@item.BookQuantity</td>
             </tr>
         }
-    </table>
+    </table>*@
 </div>
